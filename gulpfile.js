@@ -13,27 +13,27 @@ const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 
 const paths = {
-	root: './current',
+	root: '.',
 	templates: {
 		pages: 'src/templates/pages/*.pug',
 		src: 'src/templates/**/*.pug',
-		dest: 'current/assets/'
+		dest: '/'
 	},
 	styles: {
 		src: 'src/styles/**/*.*',
-		dest: 'current/assets/styles/'
+		dest: 'assets/styles/'
 	},
 	scripts: {
 		src: 'src/scripts/**/*.*',
-		dest: 'current/assets/scripts/'
+		dest: 'assets/scripts/'
 	},
 	images: {
 		src: 'src/images/**/*.*',
-		dest: 'current/assets/images/'
+		dest: 'assets/images/'
 	},
 	fonts: {
 		src: 'src/fonts/**/*.*',
-		dest: 'current/assets/fonts/'
+		dest: 'assets/fonts/'
 	}
 }
 
