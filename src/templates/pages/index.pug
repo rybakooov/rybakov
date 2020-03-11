@@ -1,7 +1,11 @@
 extends ../template
 block title
-  | Rybakov
+  | rybakov.codes
 block content
   include ../common/header
-  h1 Пуня — жопа
+  main.main
+    img(src="assets/images/pixel-man.gif", alt="Рыбаков Александр").main__img
+    .main-desc
+      h1.main-desc__title Рыбаков Александр
+      p.main-desc__text Фронтенд-разработчик в компании РА-Студио <br>Санкт-Петербург
   include ../common/footer

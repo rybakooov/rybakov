@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'Press Start 2P Regular';
+  src: url('../fonts/PressStart2P-Regular.eot');
+  src: url('../fonts/PressStart2P-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/PressStart2P-Regular.woff') format('woff'),
+  url('../fonts/PressStart2P-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: 'Press Start 2P Regular';
+}
+
+body{
+  background: #202020;
+  &.overflow{
+    max-height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.header{
+  padding: 30px 40px;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo{
+
+  }
+  &-linklist{
+    display: flex;
+    align-items: center;
+    &__link{
+      font-size: 12px;
+      line-height: 200%;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: .3s;
+      &:hover{
+        @media screen and (min-width: 1024px) {
+          color: #A400BF;
+        }
+      }
+      &:not(:last-child){
+        margin-right: 40px;
+      }
+    }
+  }
+  &-burger{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 1023px){
+  .header{
+    padding: 20px;
+    &__logo{
+      width: 126px;
+    }
+    &-linklist{
+      &__link{
+        font-size: 10px;
+        line-height: 200%;
+        &:not(:last-child){
+          margin-right: 36px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px){
+  .header{
+    &-linklist{
+      height: calc(100vh - 95px);
+      position: fixed;
+      top: 95px;
+      left: 0;
+      width: 100%;
+      background-color: #202020;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 20px;
+      transition: .3s;
+      opacity: 0;
+      transition-timing-function: ease-in-out;
+      transform: translateX(100%);
+      &.active{
+        transform: translateX(0);
+        opacity: 1;
+      }
+      &__link{
+        display: block;
+        font-size: 18px;
+        line-height: 200%;
+        color: rgba(255, 255, 255, 0.5);
+        &:not(:last-child){
+          margin-bottom: 32px;
+        }
+      }
+    }
+    &-burger{
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      &.active{
+        svg{
+          display: block;
+        }
+      }
+      svg{
+        margin-right: 8px;
+        display: none;
+      }
+      p{
+        font-size: 10px;
+        line-height: 200%;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}
